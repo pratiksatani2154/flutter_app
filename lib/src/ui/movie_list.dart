@@ -32,9 +32,26 @@ class MovieList extends StatelessWidget {
         gridDelegate:
             new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (BuildContext context, int index) {
-          return Image.network(
-            'https://image.tmdb.org/t/p/w185${snapshot.data.results[index].poster_path}',
-            fit: BoxFit.cover,
+          return Card(
+            elevation: 4,
+            margin: new EdgeInsets.all(2),
+            child: Column(
+              children: <Widget>[
+                Image.network(
+                  'https://image.tmdb.org/t/p/w185${snapshot.data.results[index].poster_path}',
+                  height: 130,
+                  width: 130,
+                  fit: BoxFit.cover,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(5),
+                ),
+                Text(
+                  snapshot.data.results[index].title,
+                  style: TextStyle(fontSize: 15, color: Colors.white),
+                )
+              ],
+            ),
           );
         });
   }
