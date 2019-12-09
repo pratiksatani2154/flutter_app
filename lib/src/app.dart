@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'ui/movie_list.dart';
 
 class App extends StatelessWidget{

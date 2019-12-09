@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/src/blocs/movies_bloc.dart';
 import 'package:flutter_app/src/models/item_model.dart';
 
+import 'drawer.dart';
+
 class MovieList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     MoviesBloc moviesBloc = MoviesBloc();
     moviesBloc.fetchAllMovies();
     return Scaffold(
+      drawer: DrawerList(),
       appBar: AppBar(
         title: Text('Popular Movies'),
       ),
